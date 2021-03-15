@@ -84,7 +84,11 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  number = 1
+  names.each do |name|
+    puts "会員No.#{number}" +" "+ name + "さん" 
+    number +=1
+  end
 end
 
 def q10
