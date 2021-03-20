@@ -84,7 +84,14 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each.with_index(1) { |val, index| puts "会員No.#{index}"+" "+"#{val}さん" } 
+  #処理が長いので複数行に分けて記述した方が可読性が上がる。
+  #処理が長い場合はdo~endの方が自然。
+  #変数展開を使用しているので"#{変数}文字列"のように記述できる。
+  #変数名は中身が分かりやすいものにする。
+  names.each.with_index(1) do  |name,
+     index|
+      puts "会員No.#{index} #{name}さん" 
+  end
   
 end
 
@@ -92,12 +99,13 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
+  #処理のまとまりは字下げ、インデントして読みやすくする
   foods.each do |food|
-  if food.include?("うに")
-    puts "#{food}は好物です"
-  else
-    puts "#{food}はまあまあ好きです。"
-  end
+    if food.include?("うに")
+      puts "#{food}は好物です"
+    else
+      puts "#{food}はまあまあ好きです。"
+    end
   end
 
 end
@@ -107,6 +115,7 @@ def q11
 
   # 以下に回答を記載
   sports.flatten!
+  sports.uniq!
   sports.each.with_index(1) {|sport, index| puts "No#{index} #{sport}" }
 end
 
@@ -114,6 +123,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
+  puts data[:user][:name]
 
 end
 
@@ -122,14 +132,15 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  puts user_data.merge(update_data)
+  
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  p data.keys
 end
 
 def q15
