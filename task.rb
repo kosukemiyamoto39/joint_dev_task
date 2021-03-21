@@ -167,15 +167,6 @@ def q15
 end
 
   
-#   if data1.has_key?(:age)
-# puts "OK"
-#   end
-#   if data2.has_key?(:age)
-#     puts "OK"
-#   else
-#     puts "NG"
-#   end
-# end
 
 def q16
   users = [
