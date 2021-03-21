@@ -114,9 +114,15 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports.flatten!
-  sports.uniq!
-  sports.each.with_index(1) {|sport, index| puts "No#{index} #{sport}" }
+  #メソッドは.でつなげて記述できる。
+  sports.flatten!.uniq!
+  
+  #do~endで書く方が一般的。
+  #長くなる時は複数行に分ける
+  sports.each.with_index(1) do |sport,
+    index|
+    puts "No#{index} #{sport}"
+  end
 end
 
 def q12
@@ -140,7 +146,8 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  p data.keys
+  data2 = data.keys
+  p data2
 end
 
 def q15
@@ -148,8 +155,27 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
+  data3 = [data1,data2]
+  
+  data3.each do |data|
+    if data.has_key?(:age)
+      puts "OK"
+    else
+      puts "NG"
+    end
+  end
 end
+
+  
+#   if data1.has_key?(:age)
+# puts "OK"
+#   end
+#   if data2.has_key?(:age)
+#     puts "OK"
+#   else
+#     puts "NG"
+#   end
+# end
 
 def q16
   users = [
