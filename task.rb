@@ -158,7 +158,7 @@ def q15
   #処理が短い時は三項演算子を使う
   data3 = [data1,data2]
   data3.each do |data|
-   data.has_key?(:age) ? (puts "OK") : (puts "NG")
+   puts data.has_key?(:age) ? "OK": "NG"
   end
 end
 
@@ -182,8 +182,22 @@ end
 class UserQ17
   # 以下に回答を記載
 
-end
+  def initialize(name:, age:, gender:)
+    @name = name
+    @age = age
+    @gender = gender
+  end
 
+def info
+  puts <<~TEXT
+  名前：#{@name}
+  名前：#{@age}
+  性別：#{@gender}
+  TEXT
+end 
+
+  
+end
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
   user1 = UserQ17.new(name: "神里", age: 32, gender: "男")
@@ -193,6 +207,10 @@ def q17
   puts "-------------"
   user2.info
 end
+
+
+
+
 
 class UserQ18
   # 以下に回答を記載
