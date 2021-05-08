@@ -220,7 +220,11 @@ class UserQ18
   end
   
   def introduce
-  (@age > 30) ? ("こんにちは，#{@name}と申します。宜しくお願いいたします。") : ("はいさいまいど〜，#{@name}です！！！")
+    if @age > 30
+      "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+    else
+     "はいさいまいど〜，#{@name}です！！！"
+    end
   end
 end
 
